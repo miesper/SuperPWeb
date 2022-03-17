@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             String cookies = CookieManager.getInstance().getCookie(url);
             request.addRequestHeader("cookie", cookies);
             request.addRequestHeader("User-Agent", userAgent);
-            request.setDescription("Downloading file...");
+            request.setDescription("Baixando arquivo...");
             request.setTitle(URLUtil.guessFileName(url, contentDisposition,
                     mimeType));
             request.allowScanningByMediaScanner();
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                             url, contentDisposition, mimeType));
             DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
             dm.enqueue(request);
-            Toast.makeText(getApplicationContext(), "Downloading File",
+            Toast.makeText(getApplicationContext(), "Baixando arquivo",
                     Toast.LENGTH_LONG).show();
 
         });
